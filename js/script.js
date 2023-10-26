@@ -1,62 +1,79 @@
 // console.log("hello Asha");
 
-//const weightButtons = document.querySelector("#weightButtons");
 //Hier wird der Ort definiert, an dem der style der schrift verändert wird
 const changeFont = document.querySelector("#changeFont");
 const styleButtons = document.querySelector("#styleButtons");
 const widthButtons = document.querySelector("#widthButtons");
 const colorButtons = document.querySelector("#colorButtons");
 
-////////////weight buttons /////////////////////////////////
+////////////Width buttons /////////////////////////////////
 ////////////////////////////////////////////////////////////
 const buttonWidthValues = [50, 80, 100];
 
-buttonWidthValues.forEach(value => {
+buttonWidthValues.forEach((value, index) => {
     const button = document.createElement('button');
     button.innerText = value.toString();
     button.value = value.toString();
     button.id = "width" + value;
 
+    // If the current button is the last one, add the 'active' class
+    if (index === buttonWidthValues.length - 1) {
+        button.classList.add('active');
+    }
+
     button.addEventListener('click', () => {
-        changeWidth(value);
+        changeWidth(value, button);
     });
 
     widthButtons.appendChild(button);
 });
 
-function changeWidth(value) {
+function changeWidth(value, clickedButton) {
+    // Set the font width
     changeFont.style.fontVariationSettings = `'wdth' ${value}`;
-    // Adjust the width of the changeFont element based on the clicked button
-    // changeFont.style.width = value + 'px';
-    // changeFont.style.display = 'inline-block';  // this ensures the width property applies to the span element
+
+    // Remove 'active' class from all width buttons
+    const allWidthButtons = widthButtons.querySelectorAll('button');
+    allWidthButtons.forEach(btn => btn.classList.remove('active'));
+
+    // Add 'active' class to the clicked button
+    clickedButton.classList.add('active');
 }
 
 ////////////////////////////////////////////////////////////
-////////////End weight buttons /////////////////////////////
+////////////End width buttons /////////////////////////////
 
 
 
 
 ////////////style buttons /////////////////////////////////
 ////////////////////////////////////////////////////////////
+const regularButton = document.createElement('button');
+regularButton.innerText = 'Regular';
+regularButton.classList.add('active'); // This will make the button appear as "clicked" by default
+regularButton.addEventListener('click', () => {
+    changeFontStyle('normal', regularButton);
+});
+styleButtons.appendChild(regularButton);
 
-const styleToggleButton = document.createElement('button');
-styleToggleButton.innerText = 'Italic'; // Starts off with the text 'Italic' because the default font style is 'normal'
-styleToggleButton.id = 'toggleFontStyle';
-styleToggleButton.addEventListener('click', toggleFontStyle);
+// Create and append Italic button
+const italicButton = document.createElement('button');
+italicButton.innerText = 'Italic';
+italicButton.addEventListener('click', () => {
+    changeFontStyle('italic', italicButton);
+});
+styleButtons.appendChild(italicButton);
 
-styleButtons.appendChild(styleToggleButton);
+function changeFontStyle(style, clickedButton) {
+    // Clear active class from all buttons
+    const allStyleButtons = styleButtons.querySelectorAll('button');
+    allStyleButtons.forEach(button => button.classList.remove('active'));
 
-function toggleFontStyle() {
-    if (changeFont.style.fontStyle === 'italic') {
-        styleToggleButton.innerText = 'Italic';
-        styleToggleButton.style.fontStyle = 'italic'; // Reset button text style to normal
-        changeFont.style.fontStyle = 'normal';
-    } else {
-        styleToggleButton.innerText = 'Regular';
-        styleToggleButton.style.fontStyle = 'normal'; // Set button text style to italic
-        changeFont.style.fontStyle = 'italic';
-    }
+    // Apply style to the changeFont
+    changeFont.style.fontStyle = style;
+
+    // Set the clicked button as active
+    clickedButton.classList.add('active');
 }
 
 ////////////////////////////////////////////////////////////
@@ -66,9 +83,10 @@ function toggleFontStyle() {
 
 ////////////color buttons /////////////////////////////////
 ////////////////////////////////////////////////////////////
+
 const colorValues = [
+    { name: "White", color: "white" },
     { name: "Peach", color: "#F0866D" },
-    { name: "Blue", color: "#6da8f0" },
     { name: "Purple", color: "#a0049e" }
 ];
 
@@ -77,15 +95,28 @@ colorValues.forEach(({ name, color }) => {
     button.innerText = name;
     button.value = color;
 
+    // Making the White button active by default
+    if (name === "White") {
+        button.classList.add('active');
+    }
+
     button.addEventListener('click', () => {
-        changeFontColor(color);
+        changeFontColor(color, button);
     });
 
     colorButtons.appendChild(button);
 });
 
-function changeFontColor(color) {
+function changeFontColor(color, clickedButton) {
+    // Set font color
     changeFont.style.color = color;
+    
+    // Remove active class from all buttons
+    const allColorButtons = colorButtons.querySelectorAll('button');
+    allColorButtons.forEach(btn => btn.classList.remove('active'));
+
+    // Add active class to the clicked button
+    clickedButton.classList.add('active');
 }
 
 ////////////////////////////////////////////////////////////
@@ -111,7 +142,7 @@ document.addEventListener('mousemove', function(event) {
     propMouseX = ((mouseX/screen_Width)*50)+50;
     propMouseY = (mouseY/screen_Height)*100;
 
-    mouseDiv.innerHTML = `rel X Position: ${propMouseX}, rel Y Position: ${propMouseY}`;
+   // mouseDiv.innerHTML = `rel X Position: ${propMouseX}, rel Y Position: ${propMouseY}`;
 
     // Das <span>-Element auswählen
     let resizeableText = document.querySelector("#resizeText");
