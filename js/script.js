@@ -126,45 +126,40 @@ function changeFontColor(color, clickedButton) {
 ////////////////////////////////////////////////////////////
 ////////////Dynamischer hover Text /////////////////////////
 
-let mouseX = "";
-let mouseY = "";
-let screen_Width = "";
-let screen_Height = "";
-let propMouseX = "";
-let propMouseY = "";
+// Eventlistener für das resize-Event hinzufügen und beim Laden der Seite Auflösung setzen
+window.addEventListener('resize', updateDimensions);
 
-const mouseDiv = document.querySelector("#mousePosition");
+// Funktion zum Aktualisieren der Bildschirmgröße und Festlegen der Startgröße des Textes
+function updateDimensions() {
+  screen_Width = window.innerWidth;
+  screen_Height = window.innerHeight;
 
+  // Setzen Sie hier die Startgröße des Textes, da sie sonst bei jedem Resize auf die Startgröße zurückgesetzt wird
+  let resizeableText = document.querySelector("#resizeText");
+  resizeableText.style.fontVariationSettings = `'wdth' 50`; // Setzt die Startbreite der Schrift auf 50
+  resizeableText.style.fontSize = "50px"; // Start-Schriftgröße
+}
+
+// Aufruf der Funktion beim ersten Laden, um Startwerte zu setzen
+updateDimensions();
+
+// Mousemove Eventlistener für dynamische Textanpassung hinzufügen
 document.addEventListener('mousemove', function(event) {
-    mouseX = event.clientX;
-    mouseY = event.clientY;
+  mouseX = event.clientX;
+  mouseY = event.clientY;
 
-    propMouseX = ((mouseX/screen_Width)*50)+50;
-    propMouseY = (mouseY/screen_Height)*100;
+  // Prozentuale Berechnung der Position der Maus im Verhältnis zur Fenstergröße
+  propMouseX = 50 + ((mouseX / screen_Width) * 100); // Startet bei 50 und skaliert mit der Mausposition
+  propMouseY = 50 + ((mouseY / screen_Height) * 100); // Startet bei 50 und skaliert mit der Mausposition
 
-   // mouseDiv.innerHTML = `rel X Position: ${propMouseX}, rel Y Position: ${propMouseY}`;
+  // Beschränken Sie die Schriftgröße auf maximal 120px
+  propMouseY = propMouseY > 120 ? 120 : propMouseY;
 
-    // Das <span>-Element auswählen
-    let resizeableText = document.querySelector("#resizeText");
-
-    // Die Schriftgröße des <span>-Elements auf 20px setzen
-    resizeableText.style.fontVariationSettings = `'wdth' ${propMouseX}`;
-    resizeableText.style.fontSize = propMouseY + "px";;
-
+  // Aktualisieren des Textes mit der neuen Breite und Schriftgröße
+  let resizeableText = document.querySelector("#resizeText");
+  resizeableText.style.fontVariationSettings = `'wdth' ${propMouseX}`;
+  resizeableText.style.fontSize = `${propMouseY}px`;
 });
-
-
-// Eventlistener für das resize-Event hinzufügen
-window.addEventListener('resize', function() {
-    screen_Width = window.innerWidth;
-    screen_Height = window.innerHeight;
-    //mouseDiv.innerHTML = screenWidth + " " + screenHeight;
-
-});
-
-// Optional: Um die Werte sofort beim Laden der Seite anzuzeigen
-screen_Width = window.innerWidth;
-screen_Height = window.innerHeight;
 
 
 ////////////////////////////////////////////////////////////

@@ -41,6 +41,10 @@ header {
     padding: 100px 100px 100px 100px;
 }
 
+footer {
+    text-align: center;
+}
+
 /* Fonts, Text */
 h1 {
     font-family: "ltr-principia-variable", sans-serif;
