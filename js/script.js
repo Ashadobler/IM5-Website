@@ -56,13 +56,17 @@ regularButton.addEventListener('click', () => {
 });
 styleButtons.appendChild(regularButton);
 
-// Create and append Italic button
 const italicButton = document.createElement('button');
 italicButton.innerText = 'Italic';
 italicButton.addEventListener('click', () => {
     changeFontStyle('italic', italicButton);
 });
 styleButtons.appendChild(italicButton);
+
+// Fügen Sie einen unsichtbaren Platzhalter hinzu, um eine gleichmäßige Ausrichtung zu gewährleisten:
+const placeholderButton = document.createElement('button');
+placeholderButton.style.visibility = 'hidden'; // Macht den Button unsichtbar
+styleButtons.appendChild(placeholderButton); // Fügt ihn zum Container hinzu
 
 function changeFontStyle(style, clickedButton) {
     // Clear active class from all buttons
