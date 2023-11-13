@@ -168,3 +168,74 @@ span {
     width: 100vw; 
     margin-left: calc(-50vw + 50%);
 }
+
+/* Responsive */
+
+/* Stile für Tablet-Geräte */
+@media (max-width: 1024px) {
+    /* Bild kleiner machen */
+    body {
+        background-size: 600px; /* 50% der ursprünglichen Größe */
+        background-position: top 140px right;
+    }
+
+    .dynamic {
+        display: none;
+    }
+
+    #tryme {
+        opacity: 0;
+    }
+
+}
+
+/* Stile für Mobilgeräte */
+@media (max-width: 480px) {
+    /* Bild unterhalb des Textes H1 und H5 platzieren */
+    body {
+        background-position: top center; /* Zentriert das Bild oben */
+        background-size: contain; /* Passt das Bild innerhalb des verfügbaren Raums an, ohne es zu beschneiden */
+        background-repeat: no-repeat;
+    }
+
+    header {
+        grid-template-columns: 1fr; /* Stapelt die Spalten auf Mobilgeräten */
+        text-align: center; /* Zentriert den Text */
+        padding: 100px 32px 100px 32px;
+        height: 430px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    main {
+        padding: 0 32px 100px 32px;
+    }
+
+    /* Bild kleiner machen */
+    body {
+        background-size: 400px; /* 50% der ursprünglichen Größe */
+        background-position: top 355px right;
+    }
+    
+    /* Platzieren Sie die Bilder unterhalb des Textes H3 */
+    #info article {
+        grid-template-columns: 1fr; /* Stapelt die Elemente in einer einzelnen Spalte auf Mobilgeräten */
+    }
+
+    #reverse {
+        order: 2;
+    }
+
+    #buttons {
+        padding: 30px 32px 30px 32px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #buttons button {
+        width: 93px;
+    }
+}
+
