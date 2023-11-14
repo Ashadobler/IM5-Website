@@ -11,11 +11,11 @@ In meiner Bachelorarbeit widme ich mich dem Thema **Schriftgestaltung in der Är
 
 ## Inspirations- und Gestaltungsprozess
 
-Bei der Konzeption ließ ich mich von einer anderen Webseite inspirieren und erstellte schnell eine eigene Vorlage in **Adobe XD** mit meinem Inhalt. Anhand dieser Vorlage notierte ich mir, wie die Teile der Webseite semantisch korrekt in HTML strukturiert werden sollten.
+Bei der Konzeption des Designs ließ ich mich von einer anderen Webseite inspirieren und erstellte  eine eigene Vorlage in **Adobe XD** mit meinem eigenen Inhalt. Die dazu gehörigen Bilder habe ich mit ChatGPT erstellt. Anhand dieser Vorlage notierte ich mir, wie die Teile der Webseite semantisch korrekt in HTML strukturiert werden sollten.
 
 ## Entwicklung und Responsive Design
 
-Mit einem präzisen Konzept, wie die Webseite aussehen und wie sich die Elemente verhalten sollten, begann ich mit der Programmierung. Nach der Fertigstellung der Webseite entsprechend meiner Vision machte ich sie responsiv und verfeinerte kleine Details.
+Nachdem ich das Konzept fertiggestellt hatte und eine klare Vorstellung davon entwickelt hatte, wie die Webseite aussehen und funktionieren sollte, ging ich zur Programmierung über. Sobald die Webseite gemäß meinen Vorstellungen realisiert war, optimierte ich sie für verschiedene Gerätetypen und nahm feine Anpassungen an den Details vor.
 
 ### Mobile Einschränkungen
 
