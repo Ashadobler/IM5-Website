@@ -90,6 +90,7 @@ span {
     display: block;
     margin: 0;
     padding: 10px 0;
+    word-break: break-all;
 }
 
 
@@ -107,7 +108,7 @@ span {
     width: 100vw;
     text-align: center;
     margin-left: calc(-50vw + 50%);
-    height: 200px;
+    height: auto;
 }
 
 #info {
@@ -176,6 +177,14 @@ span {
     background-color: #3A7D85;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
+}
+
+#userInput {
+    width: 200px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
 }
 
 /* Responsive */

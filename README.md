@@ -7,7 +7,7 @@ In meiner Bachelorarbeit widme ich mich dem Thema **Schriftgestaltung in der Är
 ## Dynamische Textbeispiele
 
 - Ein Textelement passt seine Größe dynamisch an die **Position der Maus** an.
-- Ein anderes Textelement kann durch **Benutzerbuttons** verändert werden.
+- Ein weiteres Textelement kann durch **Benutzerbuttons** verändert werden. Zusätzlich kann hier auf Wunsch ein eigener Text eingefügt werden.
 
 ## Inspirations- und Gestaltungsprozess
 

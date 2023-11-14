@@ -167,3 +167,13 @@ document.addEventListener('mousemove', function (event) {
 
 ////////////////////////////////////////////////////////////
 ////////////End Dynamischer hover Text /////////////////////
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const userInput = document.querySelector("#userInput");
+    const changeFontSpan = document.querySelector("#changeFont");
+
+    userInput.addEventListener('input', (event) => {
+        changeFontSpan.textContent = event.target.value || 'Variable';
+    });
+});
