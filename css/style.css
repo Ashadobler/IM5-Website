@@ -22,7 +22,7 @@ main {
 
 }
 
-#backgroundMain  {
+#backgroundMain {
     background-color: #FFEED9;
     width: 100vw;
 }
@@ -58,7 +58,7 @@ h2 {
     font-family: "poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
-    margin: 0; 
+    margin: 0;
     padding: 20px 0;
 }
 
@@ -88,37 +88,40 @@ span {
     font-size: 100px;
     color: white;
     display: block;
-    margin: 0; 
+    margin: 0;
     padding: 10px 0;
 }
 
 
 .subtitle {
     background-color: #F0866D;
-    width: 100vw; /* This makes the div span the full viewport width */
-    text-align: center; 
+    width: 100vw;
+    /* This makes the div span the full viewport width */
+    text-align: center;
     margin-left: calc(-50vw + 50%);
 }
 
-.dynamic, .dynamic2 {
+.dynamic,
+.dynamic2 {
     background-color: #3A7D85;
-    width: 100vw; 
-    text-align: center; 
+    width: 100vw;
+    text-align: center;
     margin-left: calc(-50vw + 50%);
     height: 200px;
 }
 
 #info {
     display: grid;
-    grid-template-rows: repeat(2, auto);  /* Two rows */
+    grid-template-rows: repeat(2, auto);
+    /* Two rows */
     gap: 30px;
     padding: 30px 0px 30px 0px;
 }
 
 #info article {
     display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 30px;  
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
 }
 
 #info h3 {
@@ -136,14 +139,16 @@ span {
     padding: 30px 0px 30px 0px;
     background-color: #3A7D85;
     width: 100vw;
-    max-width: 500px; 
+    max-width: 500px;
     margin: 0 auto;
 }
 
-#buttons > div {
+#buttons>div {
     display: grid;
-    grid-template-rows: auto auto auto auto; /* One row for the h4 and three for the buttons */
-    gap: 20px; /* adjust the gap as needed */
+    grid-template-rows: auto auto auto auto;
+    /* One row for the h4 and three for the buttons */
+    gap: 20px;
+    /* adjust the gap as needed */
     justify-content: center;
 }
 
@@ -155,7 +160,8 @@ span {
     border: none;
     border-radius: 15px;
     cursor: pointer;
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    transition: background-color 0.3s;
+    /* Smooth transition for hover effect */
 }
 
 #buttons button:hover {
@@ -168,7 +174,7 @@ span {
 
 .button-background {
     background-color: #3A7D85;
-    width: 100vw; 
+    width: 100vw;
     margin-left: calc(-50vw + 50%);
 }
 
@@ -176,9 +182,11 @@ span {
 
 /* Tablet-Geräte */
 @media (max-width: 1024px) {
+
     /* Bild kleiner machen */
     body {
-        background-size: 600px; /* kleiner als ursprünglichen Größ */
+        background-size: 600px;
+        /* kleiner als ursprünglichen Größ */
         background-position: top 140px right;
     }
 
@@ -196,16 +204,21 @@ span {
 
 /* Mobilgeräte */
 @media (max-width: 480px) {
+
     /* Bild unterhalb des Textes H1 und H5 platzieren */
     body {
-        background-position: top center; /* Zentriert das Bild oben */
-        background-size: contain; /* Passt das Bild innerhalb des verfügbaren Raums an, ohne es zu beschneiden */
+        background-position: top center;
+        /* Zentriert das Bild oben */
+        background-size: contain;
+        /* Passt das Bild innerhalb des verfügbaren Raums an, ohne es zu beschneiden */
         background-repeat: no-repeat;
     }
 
     header {
-        grid-template-columns: 1fr; /* Stapelt die Spalten auf Mobilgeräten */
-        text-align: center; /* Zentriert den Text */
+        grid-template-columns: 1fr;
+        /* Stapelt die Spalten auf Mobilgeräten */
+        text-align: center;
+        /* Zentriert den Text */
         padding: 100px 32px 100px 32px;
         height: 430px;
     }
@@ -220,13 +233,15 @@ span {
 
     /* Bild kleiner machen */
     body {
-        background-size: 400px; /* kleiner als ursprünglichen Größe */
+        background-size: 400px;
+        /* kleiner als ursprünglichen Größe */
         background-position: top 355px right;
     }
-    
+
     /* Platziere Bilder unterhalb des Textes H3 */
     #info article {
-        grid-template-columns: 1fr; /* Stapelt die Elemente in einer einzelnen Spalte auf Mobilgeräten */
+        grid-template-columns: 1fr;
+        /* Stapelt die Elemente in einer einzelnen Spalte auf Mobilgeräten */
     }
 
     #info {
@@ -252,4 +267,3 @@ span {
         font-size: 70px;
     }
 }
-

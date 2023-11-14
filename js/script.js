@@ -1,5 +1,3 @@
-// console.log("hello Asha");
-
 //Hier wird der Ort definiert, an dem der style der schrift verändert wird
 const changeFont = document.querySelector("#changeFont");
 const styleButtons = document.querySelector("#styleButtons");
@@ -7,7 +5,7 @@ const widthButtons = document.querySelector("#widthButtons");
 const colorButtons = document.querySelector("#colorButtons");
 
 ////////////Width buttons /////////////////////////////////
-////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 const buttonWidthValues = [50, 80, 100];
 
 buttonWidthValues.forEach((value, index) => {
@@ -40,14 +38,14 @@ function changeWidth(value, clickedButton) {
     clickedButton.classList.add('active');
 }
 
-////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 ////////////End width buttons /////////////////////////////
 
 
 
 
 ////////////style buttons /////////////////////////////////
-////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 const regularButton = document.createElement('button');
 regularButton.innerText = 'Regular';
 regularButton.classList.add('active'); // This will make the button appear as "clicked" by default
@@ -63,7 +61,7 @@ italicButton.addEventListener('click', () => {
 });
 styleButtons.appendChild(italicButton);
 
-// Fügen Sie einen unsichtbaren Platzhalter hinzu, um eine gleichmäßige Ausrichtung zu gewährleisten:
+// Füget einen unsichtbaren Platzhalter hinzu, um eine gleichmäßige Ausrichtung zu gewährleisten:
 const placeholderButton = document.createElement('button');
 placeholderButton.style.visibility = 'hidden'; // Macht den Button unsichtbar
 styleButtons.appendChild(placeholderButton); // Fügt ihn zum Container hinzu
@@ -86,7 +84,7 @@ function changeFontStyle(style, clickedButton) {
 
 
 ////////////color buttons /////////////////////////////////
-////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 
 const colorValues = [
     { name: "White", color: "white" },
@@ -114,7 +112,7 @@ colorValues.forEach(({ name, color }) => {
 function changeFontColor(color, clickedButton) {
     // Set font color
     changeFont.style.color = color;
-    
+
     // Remove active class from all buttons
     const allColorButtons = colorButtons.querySelectorAll('button');
     allColorButtons.forEach(btn => btn.classList.remove('active'));
@@ -123,8 +121,9 @@ function changeFontColor(color, clickedButton) {
     clickedButton.classList.add('active');
 }
 
-////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 ////////////End color buttons /////////////////////////////
+
 
 
 ////////////////////////////////////////////////////////////
@@ -135,36 +134,36 @@ window.addEventListener('resize', updateDimensions);
 
 // Funktion zum Aktualisieren der Bildschirmgröße und Festlegen der Startgröße des Textes
 function updateDimensions() {
-  screen_Width = window.innerWidth;
-  screen_Height = window.innerHeight;
+    screen_Width = window.innerWidth;
+    screen_Height = window.innerHeight;
 
-  // Setzen Sie hier die Startgröße des Textes, da sie sonst bei jedem Resize auf die Startgröße zurückgesetzt wird
-  let resizeableText = document.querySelector("#resizeText");
-  resizeableText.style.fontVariationSettings = `'wdth' 50`; // Setzt die Startbreite der Schrift auf 50
-  resizeableText.style.fontSize = "50px"; // Start-Schriftgröße
+    // Setzen Sie hier die Startgröße des Textes, da sie sonst bei jedem Resize auf die Startgröße zurückgesetzt wird
+    let resizeableText = document.querySelector("#resizeText");
+    resizeableText.style.fontVariationSettings = `'wdth' 50`; // Setzt die Startbreite der Schrift auf 50
+    resizeableText.style.fontSize = "50px"; // Start-Schriftgröße
 }
 
 // Aufruf der Funktion beim ersten Laden, um Startwerte zu setzen
 updateDimensions();
 
 // Mousemove Eventlistener für dynamische Textanpassung hinzufügen
-document.addEventListener('mousemove', function(event) {
-  mouseX = event.clientX;
-  mouseY = event.clientY;
+document.addEventListener('mousemove', function (event) {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
 
-  // Prozentuale Berechnung der Position der Maus im Verhältnis zur Fenstergröße
-  propMouseX = 50 + ((mouseX / screen_Width) * 100); // Startet bei 50 und skaliert mit der Mausposition
-  propMouseY = 50 + ((mouseY / screen_Height) * 100); // Startet bei 50 und skaliert mit der Mausposition
+    // Prozentuale Berechnung der Position der Maus im Verhältnis zur Fenstergröße
+    propMouseX = 50 + ((mouseX / screen_Width) * 100); // Startet bei 50 und skaliert mit der Mausposition
+    propMouseY = 50 + ((mouseY / screen_Height) * 100); // Startet bei 50 und skaliert mit der Mausposition
 
-  // Beschränken Sie die Schriftgröße auf maximal 120px
-  propMouseY = propMouseY > 120 ? 120 : propMouseY;
+    // Beschränken Sie die Schriftgröße auf maximal 120px
+    propMouseY = propMouseY > 120 ? 120 : propMouseY;
 
-  // Aktualisieren des Textes mit der neuen Breite und Schriftgröße
-  let resizeableText = document.querySelector("#resizeText");
-  resizeableText.style.fontVariationSettings = `'wdth' ${propMouseX}`;
-  resizeableText.style.fontSize = `${propMouseY}px`;
+    // Aktualisieren des Textes mit der neuen Breite und Schriftgröße
+    let resizeableText = document.querySelector("#resizeText");
+    resizeableText.style.fontVariationSettings = `'wdth' ${propMouseX}`;
+    resizeableText.style.fontSize = `${propMouseY}px`;
 });
 
 
 ////////////////////////////////////////////////////////////
-////////////End Dynamischer hover Text /////////////////////////
+////////////End Dynamischer hover Text /////////////////////
