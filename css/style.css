@@ -108,6 +108,13 @@ span {
     width: 100vw;
     text-align: center;
     margin-left: calc(-50vw + 50%);
+}
+
+.dynamic {
+    height: 200px;
+}
+
+.dynamic2 {
     height: auto;
 }
 
