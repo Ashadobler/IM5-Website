@@ -46,13 +46,30 @@ footer {
     margin-bottom: 30px;
 }
 
-/* Fonts, Text */
+/* Fonts, Schrift */
 h1 {
     font-family: "ltr-principia-variable", sans-serif;
-    font-variation-settings: "wdth" 100;
+    /*font-variation-settings: "wdth" 100; */
     font-size: 3em;
     margin-bottom: 30px;
+    animation-name: change; 
+    animation-duration: 2s; 
+    animation-direction: alternate; 
+    animation-iteration-count: infinite;
 }
+
+@keyframes change {
+	0% {
+    font-variation-settings: "wdth" 50, "slnt" 100;
+    text-shadow: var(--shadow); 
+  }
+
+	100% {
+    font-variation-settings: "wdth" 100, "slnt" 120;
+    text-shadow: var(--shadow2); 
+  }
+}
+
 
 h2 {
     font-family: "poppins", sans-serif;
