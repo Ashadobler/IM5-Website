@@ -19,7 +19,6 @@ main {
     margin: 0 auto;
     max-width: 1200px;
     padding: 0 100px 100px 100px;
-
 }
 
 #backgroundMain {
@@ -96,6 +95,12 @@ h5 {
     font-weight: 300;
     font-style: normal;
     font-size: 1.25em;
+}
+
+h5.highlighted {
+    background-color: #FFEED9;
+    padding: 10px;
+    border-radius: 15px;
 }
 
 span {
@@ -225,6 +230,10 @@ span {
     /* Schrift auf grünem Hintergrund weg/transparent */
     #tryme {
         opacity: 0;
+    }
+
+    h5.highlighted {
+        background-color: transparent;
     }
 
 }
